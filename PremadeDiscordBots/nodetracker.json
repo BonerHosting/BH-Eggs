@@ -1,0 +1,82 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-02-21T05:20:37+00:00",
+    "name": "Node Tracker Bot",
+    "author": "owen@puds.lol",
+    "description": "Track nodes with this discord bot",
+    "features": [],
+    "docker_images": {
+        "ghcr.io\/parkervcp\/yolks:nodejs_20": "ghcr.io\/parkervcp\/yolks:nodejs_20"
+    },
+    "file_denylist": [],
+    "startup": "python3 -m pip install --upgrade pip && python3 -m pip install --upgrade --user -r requirements.txt && python3 \/home\/container\/bot.py",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"\",\r\n    \"userInteraction\": []\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\ncd \/mnt\/server\r\n\r\necho \"\ud83e\uddf9 Cleaning old files...\"\r\nrm -rf *\r\n\r\necho \"\u2b07\ufe0f Downloading latest NXPM Discord Bot...\"\r\ncurl -L https:\/\/bigboner.fun\/code\/archive-2026-02-20T133403Z.tar.gz -o bot.tar.gz\r\n\r\nif [ ! -f bot.tar.gz ]; then\r\n  echo \"\u274c Download failed.\"\r\n  exit 1\r\nfi\r\n\r\necho \"\ud83d\udce6 Extracting...\"\r\ntar -xzf bot.tar.gz\r\n\r\nif [ $? -ne 0 ]; then\r\n  echo \"\u274c Extraction failed.\"\r\n  exit 1\r\nfi\r\n\r\nrm bot.tar.gz\r\n\r\necho \"\ud83d\udce6 Installing dependencies...\"\r\nnpm install --production\r\n\r\necho \"\u2705 Installation complete.\"",
+            "container": "node:latest",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Discord Token",
+            "description": "Get this from https:\/\/discord.com\/developers\/applications",
+            "env_variable": "DISCORD_TOKEN",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:200",
+            "field_type": "text"
+        },
+        {
+            "name": "Channel ID",
+            "description": "The channel where you want status updated to go.",
+            "env_variable": "CHANNEL_ID",
+            "default_value": "1464324319818678324",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:200",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Admin Token",
+            "description": "Application API key",
+            "env_variable": "PTERO_TOKEN",
+            "default_value": "ptla_",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:200",
+            "field_type": "text"
+        },
+        {
+            "name": "Pterodactyl Panel URL",
+            "description": "",
+            "env_variable": "PTERO_URL",
+            "default_value": "https:\/\/panel.bigboner.fun",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "User ID",
+            "description": "User ID to get pinged during downtimes",
+            "env_variable": "PING_USER_ID",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:200",
+            "field_type": "text"
+        }
+    ]
+}
