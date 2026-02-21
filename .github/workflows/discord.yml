@@ -1,0 +1,25 @@
+name: Discord Updates
+
+on:
+  push:
+  pull_request:
+  create:
+  delete:
+  release:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord Notification
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d "{
+            \"embeds\": [{
+              \"title\": \"🚀 Repository Update\",
+              \"description\": \"**${{ github.actor }}** triggered **${{ github.event_name }}** on **${{ github.repository }}**\n\nBranch: ${{ github.ref }}\",
+              \"color\": 5814783
+            }]
+          }" \
+          ${{ secrets.DISCORD_WEBHOOK }}
