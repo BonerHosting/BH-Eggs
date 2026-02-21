@@ -10,7 +10,7 @@ This repository contains custom eggs built for use with Pterodactyl Panel.
 ---
 
 ### 🌐 NXPM-Manager
-📄 [Download Egg](./PremadeDiscordBots/NXPM-Manager.json)
+📄 [Download Egg](./PremadeDiscordBots/nxpm-manager.json)
 
 **Purpose:**  
 Allows members to reverse-proxy services through Discord.
