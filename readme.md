@@ -12,33 +12,34 @@ This repository contains custom eggs built for use with Pterodactyl Panel.
 ### 🌐 NXPM-Manager
 
 **Purpose:**  
-Allow members to reverse-proxy through discord
+Allows members to reverse-proxy services through Discord.
 
 **What It Does:**
-- Reverse proxy websites and services that are on your host
-- Creates fast & easy
-- Allows members to easily proxy thigns
-- Very easy to modify and control.
+- Reverse proxy websites and services hosted on your machine
+- Quick and easy setup
+- Lets members proxy services easily
+- Fully customizable and easy to manage
 
 ---
 
 ### 📊 Node-Tracker
 
 **Purpose:**  
-Monitors nodes and sites of your choice and updates status in a discord channel
+Monitors selected nodes and websites and posts status updates to a Discord channel.
 
 **What It Does:**
-- Tracks downtime & uptime
-- Sends messages pinging the provided user with what is down & how long
-- Tracks server count
+- Tracks uptime and downtime
+- Sends alerts and pings the specified user when something goes down
+- Displays how long a service has been offline
+- Tracks active server count
 
 ---
 
 ## ⚙ Installation
 
-1. Go to Pterodactyl Admin Panel
-2. Click Nests
-3. Click Import Egg
+1. Go to **Pterodactyl Admin Panel**
+2. Click **Nests**
+3. Click **Import Egg**
 4. Upload the `.json` file
 5. Create a server using the egg
 
