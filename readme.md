@@ -1,4 +1,4 @@
-# 🥚 BH-Eggs
+# 🥚 ZH-Eggs
 Custom Pterodactyl eggs for Zentrax Hosting.
 
 This repository contains custom eggs built for use with Pterodactyl Panel.
